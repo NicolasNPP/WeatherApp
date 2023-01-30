@@ -16,6 +16,9 @@
 		CE03F2B729881711005A4119 /* WeatherAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03F2B629881711005A4119 /* WeatherAppTests.swift */; };
 		CE03F2C129881711005A4119 /* WeatherAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03F2C029881711005A4119 /* WeatherAppUITests.swift */; };
 		CE03F2C329881711005A4119 /* WeatherAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03F2C229881711005A4119 /* WeatherAppUITestsLaunchTests.swift */; };
+		CE03F2D129881740005A4119 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03F2D029881740005A4119 /* WeatherModel.swift */; };
+		CE03F2D62988176F005A4119 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03F2D52988176F005A4119 /* WeatherViewModel.swift */; };
+		CE03F2D9298817BA005A4119 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03F2D8298817BA005A4119 /* WeatherViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		CE03F2BC29881711005A4119 /* WeatherAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE03F2C029881711005A4119 /* WeatherAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAppUITests.swift; sourceTree = "<group>"; };
 		CE03F2C229881711005A4119 /* WeatherAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CE03F2D029881740005A4119 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		CE03F2D52988176F005A4119 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		CE03F2D8298817BA005A4119 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,9 @@
 		CE03F29E2988170F005A4119 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				CE03F2D7298817AC005A4119 /* View */,
+				CE03F2D22988174F005A4119 /* ViewModel */,
+				CE03F2CF29881734005A4119 /* Model */,
 				CE03F29F2988170F005A4119 /* AppDelegate.swift */,
 				CE03F2A12988170F005A4119 /* SceneDelegate.swift */,
 				CE03F2A32988170F005A4119 /* ViewController.swift */,
@@ -125,6 +134,30 @@
 				CE03F2C229881711005A4119 /* WeatherAppUITestsLaunchTests.swift */,
 			);
 			path = WeatherAppUITests;
+			sourceTree = "<group>";
+		};
+		CE03F2CF29881734005A4119 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE03F2D029881740005A4119 /* WeatherModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CE03F2D22988174F005A4119 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CE03F2D52988176F005A4119 /* WeatherViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CE03F2D7298817AC005A4119 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE03F2D8298817BA005A4119 /* WeatherViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +291,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE03F2D62988176F005A4119 /* WeatherViewModel.swift in Sources */,
+				CE03F2D9298817BA005A4119 /* WeatherViewController.swift in Sources */,
 				CE03F2A42988170F005A4119 /* ViewController.swift in Sources */,
 				CE03F2A02988170F005A4119 /* AppDelegate.swift in Sources */,
 				CE03F2A22988170F005A4119 /* SceneDelegate.swift in Sources */,
+				CE03F2D129881740005A4119 /* WeatherModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
