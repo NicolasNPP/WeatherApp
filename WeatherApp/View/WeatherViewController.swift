@@ -6,24 +6,24 @@
 //
 
 import UIKit
+import Combine
 
 class WeatherViewController: UIViewController {
 
+    var viewModel = WeatherViewModel()
+    var lista: [WeatherModel] = []
+    var anyCancellable: [AnyCancellable] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        subscriptions()
+        viewModel.getWeather()
+        print(viewModel.weatherList.count)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func subscriptions(){
+        viewModel.$weatherList.sink {_ in } receiveValue: { list in
+            self.lista = list
+        }.store(in: &anyCancellable)
     }
-    */
-
 }

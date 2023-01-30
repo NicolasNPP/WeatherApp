@@ -6,3 +6,13 @@
 //
 
 import Foundation
+import Combine
+
+class WeatherViewModel {
+    @Published var weatherList: [WeatherModel] = []
+    //Creo subject para que se suscriban
+    
+    func getWeather(){
+        weatherList = WeatherModel.getUsers()
+    }
+}
