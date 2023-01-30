@@ -7,13 +7,22 @@
 
 import Foundation
 
-struct WeatherModel {
-    var title: String = ""
-    //var descriptionText: String = ""
-    //var temp: String = ""
-    //var timezone: String = ""
-    
-    static func getUsers() -> [WeatherModel] {
-        return (1..<51).map({WeatherModel(title: "Roma \($0)")})
-    }
+struct WeatherModel: Decodable {
+    let name: String?
+    let temp: Float?
+    let description: String?
+    let icon: String?
+    let weather: [Weather]
+    let main: Main
+}
+
+struct Weather: Decodable {
+    let id: Int?
+    let main: String?
+    let description: String?
+    let icon: String?
+}
+
+struct Main: Decodable {
+    let temp: Double
 }

@@ -15,9 +15,35 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="1" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aAE-be-saN">
+                                <rect key="frame" x="0.0" y="66" width="393" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="1" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SZV-pM-31p">
+                                <rect key="frame" x="0.0" y="126" width="393" height="101"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="84"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SZV-pM-31p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3b1-Ko-Kxt"/>
+                            <constraint firstItem="aAE-be-saN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="G8O-93-bfq"/>
+                            <constraint firstItem="aAE-be-saN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="7" id="HEm-6j-fXK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SZV-pM-31p" secondAttribute="trailing" id="R83-ac-7uI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aAE-be-saN" secondAttribute="trailing" id="SiX-yK-6hb"/>
+                            <constraint firstItem="SZV-pM-31p" firstAttribute="top" secondItem="aAE-be-saN" secondAttribute="bottom" constant="21" id="Sug-Me-NoT"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="labelTemp" destination="SZV-pM-31p" id="fHb-rp-TAW"/>
+                        <outlet property="myLabel" destination="aAE-be-saN" id="qGc-9r-LBO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

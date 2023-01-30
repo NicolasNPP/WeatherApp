@@ -11,19 +11,22 @@ import Combine
 class WeatherViewController: UIViewController {
 
     var viewModel = WeatherViewModel()
-    var lista: [WeatherModel] = []
+    var wm: WeatherModel?
     var anyCancellable: [AnyCancellable] = []
+    @IBOutlet weak var myLabel: UILabel!
+    @IBOutlet weak var labelTemp: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         subscriptions()
         viewModel.getWeather()
-        print(viewModel.weatherList.count)
     }
     
     func subscriptions(){
-        viewModel.$weatherList.sink {_ in } receiveValue: { list in
-            self.lista = list
+        viewModel.$weatherList.sink {_ in } receiveValue: { wm in
+            self.wm = wm
+            self.myLabel.text = wm?.name
+            self.labelTemp.text = wm?.main.temp.description
         }.store(in: &anyCancellable)
     }
 }

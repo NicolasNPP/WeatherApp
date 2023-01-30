@@ -19,6 +19,8 @@
 		CE03F2D129881740005A4119 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03F2D029881740005A4119 /* WeatherModel.swift */; };
 		CE03F2D62988176F005A4119 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03F2D52988176F005A4119 /* WeatherViewModel.swift */; };
 		CE03F2D9298817BA005A4119 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03F2D8298817BA005A4119 /* WeatherViewController.swift */; };
+		CE03F2DC29884F12005A4119 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03F2DB29884F12005A4119 /* WeatherService.swift */; };
+		CE03F2DF298853DE005A4119 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE03F2DE298853DE005A4119 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,7 @@
 		CE03F2D029881740005A4119 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		CE03F2D52988176F005A4119 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		CE03F2D8298817BA005A4119 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		CE03F2DB29884F12005A4119 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE03F2DF298853DE005A4119 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +109,7 @@
 		CE03F29E2988170F005A4119 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				CE03F2DA29884EFF005A4119 /* Networking */,
 				CE03F2D7298817AC005A4119 /* View */,
 				CE03F2D22988174F005A4119 /* ViewModel */,
 				CE03F2CF29881734005A4119 /* Model */,
@@ -160,6 +165,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		CE03F2DA29884EFF005A4119 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				CE03F2DB29884F12005A4119 /* WeatherService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -176,6 +189,9 @@
 			dependencies = (
 			);
 			name = WeatherApp;
+			packageProductDependencies = (
+				CE03F2DE298853DE005A4119 /* Alamofire */,
+			);
 			productName = WeatherApp;
 			productReference = CE03F29C2988170F005A4119 /* WeatherApp.app */;
 			productType = "com.apple.product-type.application";
@@ -248,6 +264,9 @@
 				Base,
 			);
 			mainGroup = CE03F2932988170F005A4119;
+			packageReferences = (
+				CE03F2DD298853DE005A4119 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = CE03F29D2988170F005A4119 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -297,6 +316,7 @@
 				CE03F2A02988170F005A4119 /* AppDelegate.swift in Sources */,
 				CE03F2A22988170F005A4119 /* SceneDelegate.swift in Sources */,
 				CE03F2D129881740005A4119 /* WeatherModel.swift in Sources */,
+				CE03F2DC29884F12005A4119 /* WeatherService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -638,6 +658,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CE03F2DD298853DE005A4119 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE03F2DE298853DE005A4119 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE03F2DD298853DE005A4119 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CE03F2942988170F005A4119 /* Project object */;
 }
