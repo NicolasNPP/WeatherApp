@@ -12,8 +12,8 @@ struct WeatherModel: Decodable {
     let temp: Float?
     let description: String?
     let icon: String?
-    let weather: [Weather]
-    let main: Main
+    let weather: [Weather]?
+    let main: Main?
 }
 
 struct Weather: Decodable {

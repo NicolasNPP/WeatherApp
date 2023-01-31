@@ -26,7 +26,7 @@ class WeatherViewController: UIViewController {
         viewModel.$weatherList.sink {_ in } receiveValue: { wm in
             self.wm = wm
             self.myLabel.text = wm?.name
-            self.labelTemp.text = wm?.main.temp.description
+            self.labelTemp.text = wm?.main?.temp.description
         }.store(in: &anyCancellable)
     }
 }
