@@ -16,37 +16,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kBX-aX-dP8">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kBX-aX-dP8">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="Kg1-cR-GPY" appends="YES" id="ye4-x9-2HJ"/>
                                 </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="1" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aAE-be-saN">
-                                <rect key="frame" x="0.0" y="108" width="393" height="39"/>
+                                <rect key="frame" x="0.0" y="91" width="393" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="1" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SZV-pM-31p">
-                                <rect key="frame" x="0.0" y="147" width="393" height="119.66666666666669"/>
+                                <rect key="frame" x="0.0" y="146" width="393" height="119.66666666666669"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="100"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="t6E-M5-C8v">
+                                <rect key="frame" x="186" y="138" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" systemColor="systemIndigoColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="kBX-aX-dP8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="78T-Rp-ube"/>
+                            <constraint firstItem="kBX-aX-dP8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7Wr-UJ-wG6"/>
+                            <constraint firstItem="kBX-aX-dP8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="9K2-bd-pnt"/>
+                            <constraint firstAttribute="bottom" secondItem="kBX-aX-dP8" secondAttribute="bottom" id="efU-kF-04y"/>
+                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Kg1-cR-GPY" appends="YES" id="seH-el-JdA"/>
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="t6E-M5-C8v" id="COC-AA-Zfs"/>
                         <outlet property="backgroundImage" destination="kBX-aX-dP8" id="Oxn-fL-6Ct"/>
                         <outlet property="labelTemp" destination="SZV-pM-31p" id="fHb-rp-TAW"/>
                         <outlet property="myLabel" destination="aAE-be-saN" id="qGc-9r-LBO"/>
@@ -65,6 +76,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
