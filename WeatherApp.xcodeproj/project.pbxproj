@@ -21,6 +21,7 @@
 		CE03F2D9298817BA005A4119 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03F2D8298817BA005A4119 /* WeatherViewController.swift */; };
 		CE03F2DC29884F12005A4119 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE03F2DB29884F12005A4119 /* WeatherService.swift */; };
 		CE03F2DF298853DE005A4119 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE03F2DE298853DE005A4119 /* Alamofire */; };
+		CEA7FFB229890D6E00134F27 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CEA7FFB129890D6E00134F27 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA7FFB229890D6E00134F27 /* Kingfisher in Frameworks */,
 				CE03F2DF298853DE005A4119 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,6 +193,7 @@
 			name = WeatherApp;
 			packageProductDependencies = (
 				CE03F2DE298853DE005A4119 /* Alamofire */,
+				CEA7FFB129890D6E00134F27 /* Kingfisher */,
 			);
 			productName = WeatherApp;
 			productReference = CE03F29C2988170F005A4119 /* WeatherApp.app */;
@@ -266,6 +269,7 @@
 			mainGroup = CE03F2932988170F005A4119;
 			packageReferences = (
 				CE03F2DD298853DE005A4119 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				CEA7FFB029890D6E00134F27 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = CE03F29D2988170F005A4119 /* Products */;
 			projectDirPath = "";
@@ -668,6 +672,14 @@
 				kind = branch;
 			};
 		};
+		CEA7FFB029890D6E00134F27 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -675,6 +687,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CE03F2DD298853DE005A4119 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		CEA7FFB129890D6E00134F27 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEA7FFB029890D6E00134F27 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

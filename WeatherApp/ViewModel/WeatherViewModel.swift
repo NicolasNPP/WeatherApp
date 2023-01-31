@@ -14,10 +14,10 @@ class WeatherViewModel {
     //Creo subject para que se suscriban
     
     var service = WeatherService.shared
-    func getWeather(){
+    func getWeather(latitude: String, longitude: String){
         
     
-        WeatherService.shared.getWeather(latitude: "-34.61315", longitude: "-58.37723") { weather in
+        WeatherService.shared.getWeather(latitude: latitude, longitude: longitude) { weather in
             self.weatherList = weather
         } failure: { error in
             print(error)
