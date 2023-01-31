@@ -24,5 +24,5 @@ struct Weather: Decodable {
 }
 
 struct Main: Decodable {
-    let temp: Double
+    let temp: Double?
 }

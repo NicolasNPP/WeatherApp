@@ -23,6 +23,7 @@ class WeatherViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.labelTemp.text = ""
         activityIndicator.startAnimating()
         subscriptions()
         viewModel.getWeather(latitude: "-34.61315", longitude: "-58.37723")
@@ -35,7 +36,11 @@ class WeatherViewController: UIViewController {
         viewModel.$weatherList.sink {_ in } receiveValue: { wm in
             self.wm = wm
             self.myLabel.text = wm?.name
-            self.labelTemp.text = wm?.main?.temp.description
+            if let valor =
+                wm?.main?.temp?.rounded((.towardZero)) {
+                var formated = String(format: "%.0f", valor)
+                self.labelTemp.text? = "\(formated)ºC"
+            }
         }.store(in: &anyCancellable)
         
         viewModel.$loading.sink { state in
