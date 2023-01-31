@@ -23,7 +23,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="1" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SZV-pM-31p">
-                                <rect key="frame" x="0.0" y="126" width="393" height="101"/>
+                                <rect key="frame" x="0.0" y="108" width="393" height="101"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="84"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -37,7 +37,7 @@
                             <constraint firstItem="aAE-be-saN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="7" id="HEm-6j-fXK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SZV-pM-31p" secondAttribute="trailing" id="R83-ac-7uI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aAE-be-saN" secondAttribute="trailing" id="SiX-yK-6hb"/>
-                            <constraint firstItem="SZV-pM-31p" firstAttribute="top" secondItem="aAE-be-saN" secondAttribute="bottom" constant="21" id="Sug-Me-NoT"/>
+                            <constraint firstItem="SZV-pM-31p" firstAttribute="top" secondItem="aAE-be-saN" secondAttribute="bottom" constant="3" id="Sug-Me-NoT"/>
                         </constraints>
                     </view>
                     <connections>
