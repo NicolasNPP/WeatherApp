@@ -32,8 +32,13 @@ class WeatherViewModel {
     }
     
     func getIcon(name: String){
-        let url = " http://openweathermap.org/img/wn/\(name)@2x.png"
-        print(url)
-        self.imageWeather?.kf.setImage(with: URL(string: url))
+        
+        DispatchQueue.main.async {
+            var im = WeatherService.shared.getIcon()
+            
+            self.imageWeather = im
+        }
+        
+
     }
 }

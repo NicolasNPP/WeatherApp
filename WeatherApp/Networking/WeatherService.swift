@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import UIKit
 
 class WeatherService {
     static let shared = WeatherService()
@@ -29,6 +30,18 @@ class WeatherService {
         }
     }
     
+    func getIcon() -> UIImageView{
+        var theImg = UIImageView()
+       // theImg.image = UIImage(named: "defaultSunset")
+        theImg.setImage(url: "https://openweathermap.org/img/wn/01d@4x.png")
+        return theImg
+    }
+    
 }
 
-
+extension UIImageView {
+    func setImage(url: String){
+        self.kf.setImage(with: URL(string: url))
+        print(url)
+    }
+}

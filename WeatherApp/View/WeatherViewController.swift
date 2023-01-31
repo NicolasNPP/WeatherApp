@@ -32,6 +32,7 @@ class WeatherViewController: UIViewController {
         viewModel.getWeather(latitude: "-34.61315", longitude: "-58.37723")
         backgroundImage.image = UIImage(named: "defaultSunset")
         effectImage()
+        viewModel.getIcon(name: "a")
     }
     
     func subscriptions(){
@@ -52,11 +53,9 @@ class WeatherViewController: UIViewController {
         }.store(in: &anyCancellable)
         
         viewModel.$imageWeather.sink { state in
-        
             if let valor = state {
-                self.imwea = valor
+                self.imwea.image = valor.image
             }
-            
         }.store(in: &anyCancellable)
     }
  
@@ -65,6 +64,7 @@ class WeatherViewController: UIViewController {
             activityIndicator.startAnimating()
         } else {activityIndicator.stopAnimating()}
     }
+ 
     
     private func effectImage(){
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
@@ -73,6 +73,7 @@ class WeatherViewController: UIViewController {
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         backgroundImage.addSubview(blurEffectView)
     }
+    
     
     @IBAction func SwipeAction(_ sender: Any) {
         viewModel.getWeather(latitude: "-38.00042", longitude: "-57.5562")
