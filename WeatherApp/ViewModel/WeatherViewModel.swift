@@ -44,8 +44,8 @@ class WeatherViewModel {
         }
     }
     
-    func getWeather5Days(){
-        WeatherService.shared.getWather5Days(latitude: "-38.00042", longitude: "-57.5562") { weather in
+    func getWeather5Days(lat: String, long: String){
+        WeatherService.shared.getWather5Days(latitude: lat, longitude: long) { weather in
             //print(weather.list)
             self.weatherExtended = weather
         } failure: { error in

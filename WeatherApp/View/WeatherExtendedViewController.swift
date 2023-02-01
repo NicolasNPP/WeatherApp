@@ -22,7 +22,9 @@ class WeatherExtendedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         suscripcions()
-        viewModel.getWeather5Days()
+        if let valor = latLon {
+            viewModel.getWeather5Days(lat: valor.0, long: valor.1)
+        }
         backgroundImage.image = image
         effectImage()
         tableview.dataSource = self
