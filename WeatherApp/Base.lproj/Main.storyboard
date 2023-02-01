@@ -48,21 +48,21 @@
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="a8C-Sb-AOo">
                                 <rect key="frame" x="138" y="792" width="116" height="26"/>
                             </pageControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sunny" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mx-ib-NLw">
-                                <rect key="frame" x="170" y="234" width="55" height="23"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sunny" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mx-ib-NLw">
+                                <rect key="frame" x="51" y="234" width="293" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Min: 22ºC - Max: 33ºC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vk3-w3-gKL">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Min: 22ºC - Max: 33ºC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vk3-w3-gKL">
                                 <rect key="frame" x="101" y="261" width="194" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rmM-Rs-Gp9">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rmM-Rs-Gp9">
                                 <rect key="frame" x="80" y="750" width="237" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -100,8 +100,11 @@
                     <connections>
                         <outlet property="activityIndicator" destination="t6E-M5-C8v" id="COC-AA-Zfs"/>
                         <outlet property="backgroundImage" destination="kBX-aX-dP8" id="Oxn-fL-6Ct"/>
+                        <outlet property="buttonNextScreen" destination="rmM-Rs-Gp9" id="GhA-IB-kVE"/>
+                        <outlet property="descriptionLabel" destination="1mx-ib-NLw" id="AP7-cg-ANA"/>
                         <outlet property="imwea" destination="B66-BH-zY1" id="7l1-Nf-8BR"/>
                         <outlet property="labelTemp" destination="SZV-pM-31p" id="fHb-rp-TAW"/>
+                        <outlet property="minMaxLabel" destination="vk3-w3-gKL" id="Or1-ky-OP8"/>
                         <outlet property="myLabel" destination="aAE-be-saN" id="qGc-9r-LBO"/>
                         <segue destination="pLm-nV-zyY" kind="show" identifier="detailSegue" id="lMN-Cd-UOb"/>
                     </connections>

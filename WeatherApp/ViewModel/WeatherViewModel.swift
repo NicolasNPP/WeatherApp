@@ -18,6 +18,7 @@ class WeatherViewModel {
     @Published var icon: String?
     @Published var description: String?
     @Published var backgroundImageWeather: UIImageView?
+    @Published var minMax: (Double?,Double?)?
     //Creo subject para que se suscriban
  
     
@@ -32,6 +33,9 @@ class WeatherViewModel {
             self.icon = weather.weather?[0].icon
             
             self.description = weather.weather?[0].description
+           
+            
+            self.minMax = (weather.main?.temp_min,weather.main?.temp_max)
             
         } failure: { error in
             print(error)

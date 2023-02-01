@@ -21,7 +21,10 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var imwea: UIImageView!
-
+    @IBOutlet weak var buttonNextScreen: UIButton!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var minMaxLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.labelTemp.text = ""
@@ -43,6 +46,7 @@ class WeatherViewController: UIViewController {
                 wm?.main?.temp?.rounded((.towardZero)) {
                 var formated = String(format: "%.0f", valor)
                 self.labelTemp.text? = "\(formated)ºC"
+                self.buttonNextScreen.isHidden = false
             }
         }.store(in: &anyCancellable)
         
@@ -67,6 +71,21 @@ class WeatherViewController: UIViewController {
             if let valor = state {
                 print(state)
                 self.backgroundImage.image = UIImage(named: "\(state!)")
+                self.descriptionLabel.text = state
+                self.descriptionLabel.isHidden = false
+                
+            }
+        }.store(in: &anyCancellable)
+        
+        viewModel.$minMax.sink { state in
+            if let valor = state {
+                var formated = String(format: "%.0f", valor.0!)
+                var formated2 = String(format: "%.0f", valor.1!)
+                self.minMaxLabel.text? = "Min: \(formated)ºC - Max: \(formated2)ºC"
+                print(valor.0)
+                print(valor.1)
+                
+                self.minMaxLabel.isHidden = false
             }
         }.store(in: &anyCancellable)
     }
