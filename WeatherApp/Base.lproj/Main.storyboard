@@ -20,6 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="Kg1-cR-GPY" appends="YES" id="ye4-x9-2HJ"/>
+                                    <outletCollection property="gestureRecognizers" destination="tSL-LT-Yg7" appends="YES" id="vP2-iz-oxq"/>
                                 </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="1" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aAE-be-saN">
@@ -105,9 +106,14 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer requiresExclusiveTouchType="NO" direction="right" id="Kg1-cR-GPY">
+                <swipeGestureRecognizer requiresExclusiveTouchType="NO" direction="left" id="Kg1-cR-GPY">
                     <connections>
                         <action selector="SwipeAction:" destination="BYZ-38-t0r" id="q5Y-LG-wWl"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="tSL-LT-Yg7">
+                    <connections>
+                        <action selector="SwipeLeftAction:" destination="BYZ-38-t0r" id="H2a-oI-e0w"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>

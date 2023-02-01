@@ -13,7 +13,7 @@ class WeatherViewController: UIViewController {
     var viewModel = WeatherViewModel()
     var wm: WeatherModel?
     var anyCancellable: [AnyCancellable] = []
-    var locations: [(String,String)] = [("-34.61315","-58.37723"),("-38.00042","-57.5562")]
+    var locations: [(String,String)] = [("-34.61315","-58.37723"),("-38.00042","-57.5562") ,("-54.554047","-67.225258")]
     var numTemp = 0
     
     @IBOutlet weak var myLabel: UILabel!
@@ -75,20 +75,44 @@ class WeatherViewController: UIViewController {
     
     func nextLocation(){
         var arraySize = self.locations.count
-        if self.numTemp < arraySize-1 {
-            self.numTemp += 1
-            var temp = locations[numTemp]
+        print(numTemp)
+        if self.numTemp <= arraySize-1 {
+            if self.numTemp == arraySize-1 {
+                self.numTemp = 0
+            } else {
+                self.numTemp += 1
+            }
+            var temp = locations[self.numTemp]
             viewModel.getWeather(latitude: temp.0, longitude: temp.1)
-        } else {
-            print("limite")
+            print(numTemp)
+        }
+    }
+    
+    func backLocation(){
+        var arraySize = self.locations.count
+        if self.numTemp <= arraySize-1 {
+            print("entre")
+            if self.numTemp <= 0 {
+                self.numTemp = arraySize-1
+            } else {
+                self.numTemp -= 1
+            }
+            var temp = locations[self.numTemp]
+            viewModel.getWeather(latitude: temp.0, longitude: temp.1)
+            print(numTemp)
         }
     }
     
     
     @IBAction func SwipeAction(_ sender: Any) {
         
-        nextLocation()
+        backLocation()
         
+    }
+    
+    
+    @IBAction func SwipeLeftAction(_ sender: Any) {
+        nextLocation()
     }
     
     
