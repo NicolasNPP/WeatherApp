@@ -12,6 +12,7 @@ class WeatherViewController: UIViewController {
 
     var viewModel = WeatherViewModel()
     var wm: WeatherModel?
+    @IBOutlet weak var pageControl: UIPageControl!
     var anyCancellable: [AnyCancellable] = []
     var locations: [(String,String)] = [("41.38879","41.38879"),("-34.61315","-58.37723"),("-38.00042","-57.5562") ,("-54.554047","-67.225258")]
     var numTemp = 0
@@ -27,13 +28,15 @@ class WeatherViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(locations.count)
         self.labelTemp.text = ""
         activityIndicator.startAnimating()
         subscriptions()
-        viewModel.getWeather(latitude: "-34.61315", longitude: "-58.37723")
+        viewModel.getWeather(latitude: locations[0].0, longitude: locations[0].1)
         backgroundImage.image = UIImage(named: "defaultSunset")
         effectImage()
-        //viewModel.getIcon(named: "01d")
+        pageControl.numberOfPages = locations.count
+        pageControl.currentPage = self.numTemp
     }
     
     func subscriptions(){
@@ -115,6 +118,7 @@ class WeatherViewController: UIViewController {
             var temp = locations[self.numTemp]
             viewModel.getWeather(latitude: temp.0, longitude: temp.1)
         }
+        pageControl.currentPage = self.numTemp
     }
     
     func backLocation(){
@@ -128,16 +132,17 @@ class WeatherViewController: UIViewController {
             var temp = locations[self.numTemp]
             viewModel.getWeather(latitude: temp.0, longitude: temp.1)
         }
+        pageControl.currentPage = self.numTemp
     }
     
     
     @IBAction func SwipeAction(_ sender: Any) {
-        backLocation()
+        nextLocation()
     }
     
     
     @IBAction func SwipeLeftAction(_ sender: Any) {
-        nextLocation()
+        backLocation()
     }
     
  

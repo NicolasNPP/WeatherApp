@@ -21,6 +21,7 @@ class WeatherViewModel {
     @Published var minMax: (Double?,Double?)?
     @Published var weatherExtended: WeetherResponse?
     @Published var imgWeatherDay: WeetherResponse?
+    
     //Creo subject para que se suscriban
  
     
@@ -59,4 +60,6 @@ class WeatherViewModel {
         let im = WeatherService.shared.getIcon(name: named)
             self.imageWeather = im
     }
+    
+    
 }
