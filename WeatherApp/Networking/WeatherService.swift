@@ -44,9 +44,14 @@ class WeatherService {
         return "https://api.openweathermap.org/data/2.5/\(api)?lat=\(lat)&lon=\(long)&appid="
     }
     
-    func getIcon() -> UIImageView{
+    
+    
+    func getIcon(name: String) -> UIImageView{
         var theImg = UIImageView()
-        theImg.setImage(url: "https://openweathermap.org/img/wn/01d@4x.png")
+        let url = URL(string: "https://openweathermap.org/img/wn/\(name)@2x.png")
+        let data = try? Data(contentsOf: url!)
+        theImg.image = UIImage(data: data!)
+        
         return theImg
     }
 }

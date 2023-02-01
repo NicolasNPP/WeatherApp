@@ -30,7 +30,7 @@ class WeatherViewController: UIViewController {
         viewModel.getWeather(latitude: "-34.61315", longitude: "-58.37723")
         backgroundImage.image = UIImage(named: "defaultSunset")
         effectImage()
-        viewModel.getIcon(name: "a")
+        //viewModel.getIcon(named: "01d")
         viewModel.getWeather5Days()
     }
     
@@ -56,6 +56,15 @@ class WeatherViewController: UIViewController {
                 self.imwea.image = valor.image
             }
         }.store(in: &anyCancellable)
+        
+        viewModel.$icon.sink { state in
+            if let valor = state {
+                self.viewModel.getIcon(named: valor)
+            }
+        }.store(in: &anyCancellable)
+        
+        
+       
     }
  
     private func configLoading(state: Bool) {
@@ -75,7 +84,6 @@ class WeatherViewController: UIViewController {
     
     func nextLocation(){
         var arraySize = self.locations.count
-        print(numTemp)
         if self.numTemp <= arraySize-1 {
             if self.numTemp == arraySize-1 {
                 self.numTemp = 0
@@ -84,14 +92,12 @@ class WeatherViewController: UIViewController {
             }
             var temp = locations[self.numTemp]
             viewModel.getWeather(latitude: temp.0, longitude: temp.1)
-            print(numTemp)
         }
     }
     
     func backLocation(){
         var arraySize = self.locations.count
         if self.numTemp <= arraySize-1 {
-            print("entre")
             if self.numTemp <= 0 {
                 self.numTemp = arraySize-1
             } else {
@@ -99,15 +105,12 @@ class WeatherViewController: UIViewController {
             }
             var temp = locations[self.numTemp]
             viewModel.getWeather(latitude: temp.0, longitude: temp.1)
-            print(numTemp)
         }
     }
     
     
     @IBAction func SwipeAction(_ sender: Any) {
-        
         backLocation()
-        
     }
     
     

@@ -15,6 +15,7 @@ class WeatherViewModel {
     @Published var weatherList: WeatherModel?
     @Published var loading: Bool?
     @Published var imageWeather: UIImageView?
+    @Published var icon: String?
     //Creo subject para que se suscriban
     
     var service = WeatherService.shared
@@ -24,7 +25,10 @@ class WeatherViewModel {
         WeatherService.shared.getWeather(latitude: latitude, longitude: longitude) { weather in
             self.weatherList = weather
             self.loading = false
-            self.getIcon(name: "01d")
+            
+            self.icon = weather.weather?[0].icon
+            
+        
         } failure: { error in
             print(error)
             self.loading = false
@@ -40,8 +44,8 @@ class WeatherViewModel {
         }
     }
     
-    func getIcon(name: String){
-            var im = WeatherService.shared.getIcon()
+    func getIcon(named: String){
+        let im = WeatherService.shared.getIcon(name: named)
             self.imageWeather = im
     }
 }
