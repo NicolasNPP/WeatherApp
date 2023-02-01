@@ -20,6 +20,7 @@ class WeatherViewModel {
     @Published var backgroundImageWeather: UIImageView?
     @Published var minMax: (Double?,Double?)?
     @Published var weatherExtended: WeetherResponse?
+    @Published var imgWeatherDay: WeetherResponse?
     //Creo subject para que se suscriban
  
     

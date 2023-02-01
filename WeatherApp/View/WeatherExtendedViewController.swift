@@ -31,6 +31,8 @@ class WeatherExtendedViewController: UIViewController {
         tableview.delegate = self
         tableview.backgroundColor = .clear
         tableview.register(UINib(nibName: "WeatherExtendedTableViewCell", bundle: nil), forCellReuseIdentifier: "mycustomcell")
+        
+
     }
     
     func suscripcions(){
@@ -71,7 +73,17 @@ extension WeatherExtendedViewController: UITableViewDataSource, UITableViewDeleg
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        
+        
+        
         var cell =  tableview.dequeueReusableCell(withIdentifier: "mycustomcell", for: indexPath) as? WeatherExtendedTableViewCell
+         
+        //print(indexPath[1]+1)
+        var date = Date();
+        var addedDays = TimeInterval(86400 * (indexPath[1]+1) )
+        date = date.addingTimeInterval(addedDays)
+        var dateFormatter = DateFormatter();
+        dateFormatter.dateStyle = .short
         
         if let valor = self.list?[indexPath.row].main?.temp?.rounded((.towardZero)) {
             var temp = self.list?[indexPath.row].main?.temp?.description
@@ -81,8 +93,8 @@ extension WeatherExtendedViewController: UITableViewDataSource, UITableViewDeleg
             var max = self.list?[indexPath.row].main?.temp_max
             
             var formated = String(format: "%.0f", valor)
-            cell?.temp.text = "\(formated)ºC"
-            cell?.minMax.text = "\(formatted(valor: min!))ºC / \(formatted(valor: max!))ºC"
+            cell?.temp.text = "\(dateFormatter.string(from: date)) \(formated)ºC"
+            cell?.minMax.text = "Min: \(formatted(valor: min!))ºC / Max: \(formatted(valor: max!))ºC"
                 cell?.layoutIfNeeded()
                 return cell!
         }
