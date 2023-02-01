@@ -89,11 +89,11 @@ extension WeatherExtendedViewController: UITableViewDataSource, UITableViewDeleg
             var temp = self.list?[indexPath.row].main?.temp?.description
             
             var min = self.list?[indexPath.row].main?.temp_min
-            
             var max = self.list?[indexPath.row].main?.temp_max
+            var description = self.list?[indexPath.row].weather?[0].main
             
             var formated = String(format: "%.0f", valor)
-            cell?.temp.text = "\(dateFormatter.string(from: date)) \(formated)ºC"
+            cell?.temp.text = "\(dateFormatter.string(from: date)) - \(formated)ºC - \(description!)"
             cell?.minMax.text = "Min: \(formatted(valor: min!))ºC / Max: \(formatted(valor: max!))ºC"
                 cell?.layoutIfNeeded()
                 return cell!

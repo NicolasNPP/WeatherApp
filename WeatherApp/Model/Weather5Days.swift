@@ -25,6 +25,7 @@ struct MainDay: Decodable {
 
 struct WeatherDay: Decodable {
     let icon: String?
+    let main: String?
 }
 
 struct Day: Decodable {
