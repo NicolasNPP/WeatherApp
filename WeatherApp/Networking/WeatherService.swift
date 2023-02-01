@@ -26,8 +26,6 @@ class WeatherService {
             }
         }
     }
-    
-    //https://openweathermap.org/forecast5
      
     func getWather5Days(latitude: String, longitude: String, success: @escaping (_ weather: WeetherResponse) -> (), failure: @escaping (_ error: Error?) -> ()) {
         

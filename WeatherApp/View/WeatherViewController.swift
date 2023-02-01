@@ -14,6 +14,7 @@ class WeatherViewController: UIViewController {
     var wm: WeatherModel?
     var anyCancellable: [AnyCancellable] = []
     var locations: [(String,String)] = [("-34.61315","-58.37723"),("-38.00042","-57.5562")]
+    var numTemp = 0
     
     @IBOutlet weak var myLabel: UILabel!
     @IBOutlet weak var labelTemp: UILabel!
@@ -72,8 +73,23 @@ class WeatherViewController: UIViewController {
         backgroundImage.addSubview(blurEffectView)
     }
     
+    func nextLocation(){
+        var arraySize = self.locations.count
+        if self.numTemp < arraySize-1 {
+            self.numTemp += 1
+            var temp = locations[numTemp]
+            viewModel.getWeather(latitude: temp.0, longitude: temp.1)
+        } else {
+            print("limite")
+        }
+    }
+    
     
     @IBAction func SwipeAction(_ sender: Any) {
-        viewModel.getWeather(latitude: "-38.00042", longitude: "-57.5562")
+        
+        nextLocation()
+        
     }
+    
+    
 }
