@@ -32,7 +32,7 @@ class WeatherService {
         AF.request("\(setUrl(lat: latitude, long: longitude, api: "forecast"))\(API_KEY)\(UNITS)", method: .get).validate(statusCode: 200...299).responseDecodable (of: WeetherResponse.self) { response in
             
             if let weather = response.value{
-                print(weather)
+                //print(weather)
                 success(weather)
             } else {
                 failure(response.error)

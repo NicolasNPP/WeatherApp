@@ -13,7 +13,7 @@ class WeatherViewController: UIViewController {
     var viewModel = WeatherViewModel()
     var wm: WeatherModel?
     var anyCancellable: [AnyCancellable] = []
-    var locations: [(String,String)] = [("-34.61315","-58.37723"),("-38.00042","-57.5562") ,("-54.554047","-67.225258")]
+    var locations: [(String,String)] = [("41.38879","41.38879"),("-34.61315","-58.37723"),("-38.00042","-57.5562") ,("-54.554047","-67.225258")]
     var numTemp = 0
     
     @IBOutlet weak var myLabel: UILabel!
@@ -63,8 +63,12 @@ class WeatherViewController: UIViewController {
             }
         }.store(in: &anyCancellable)
         
-        
-       
+        viewModel.$description.sink { state in
+            if let valor = state {
+                print(state)
+                self.backgroundImage.image = UIImage(named: "\(state!)")
+            }
+        }.store(in: &anyCancellable)
     }
  
     private func configLoading(state: Bool) {

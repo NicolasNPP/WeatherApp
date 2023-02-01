@@ -16,7 +16,10 @@ class WeatherViewModel {
     @Published var loading: Bool?
     @Published var imageWeather: UIImageView?
     @Published var icon: String?
+    @Published var description: String?
+    @Published var backgroundImageWeather: UIImageView?
     //Creo subject para que se suscriban
+ 
     
     var service = WeatherService.shared
     func getWeather(latitude: String, longitude: String){
@@ -28,7 +31,8 @@ class WeatherViewModel {
             
             self.icon = weather.weather?[0].icon
             
-        
+            self.description = weather.weather?[0].description
+            
         } failure: { error in
             print(error)
             self.loading = false
@@ -37,7 +41,7 @@ class WeatherViewModel {
     
     func getWeather5Days(){
         WeatherService.shared.getWather5Days(latitude: "-38.00042", longitude: "-57.5562") { weather in
-           print(weather)
+           //print(weather)
         } failure: { error in
             print(error)
             self.loading = false
