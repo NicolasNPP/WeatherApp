@@ -71,7 +71,7 @@
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="pLm-nV-zyY" kind="show" id="FNL-FN-GUk"/>
+                                    <action selector="nextScreen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FqP-v6-FjP"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -103,6 +103,7 @@
                         <outlet property="imwea" destination="B66-BH-zY1" id="7l1-Nf-8BR"/>
                         <outlet property="labelTemp" destination="SZV-pM-31p" id="fHb-rp-TAW"/>
                         <outlet property="myLabel" destination="aAE-be-saN" id="qGc-9r-LBO"/>
+                        <segue destination="pLm-nV-zyY" kind="show" identifier="detailSegue" id="lMN-Cd-UOb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -126,14 +127,28 @@
                     <view key="view" contentMode="scaleToFill" id="2gX-pk-rU8">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IkV-W0-FFW">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="029-lO-QJv"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IkV-W0-FFW" firstAttribute="top" secondItem="2gX-pk-rU8" secondAttribute="top" id="jbx-6k-0Z1"/>
+                            <constraint firstItem="IkV-W0-FFW" firstAttribute="leading" secondItem="029-lO-QJv" secondAttribute="leading" id="lfm-Ou-Oab"/>
+                            <constraint firstAttribute="bottom" secondItem="IkV-W0-FFW" secondAttribute="bottom" id="na5-FI-DB2"/>
+                            <constraint firstItem="IkV-W0-FFW" firstAttribute="trailing" secondItem="029-lO-QJv" secondAttribute="trailing" id="oEh-0p-tRK"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pm6-Zg-6sH"/>
+                    <connections>
+                        <outlet property="backgroundImage" destination="IkV-W0-FFW" id="H85-RP-1Bb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pht-X3-vLu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="876" y="-2"/>
+            <point key="canvasLocation" x="875.57251908396938" y="-2.1126760563380285"/>
         </scene>
     </scenes>
     <resources>

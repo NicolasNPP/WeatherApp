@@ -122,5 +122,23 @@ class WeatherViewController: UIViewController {
         nextLocation()
     }
     
+ 
+    @IBAction func nextScreen(_ sender: Any) {
+        performSegue(withIdentifier: "detailSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "detailSegue" {
+            
+            if let destino = segue.destination as? WeatherExtendedViewController {
+                
+                destino.image = self.backgroundImage.image
+            }
+            
+        }
+        
+    }
+    
     
 }
