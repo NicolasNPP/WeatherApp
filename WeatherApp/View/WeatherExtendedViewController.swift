@@ -6,17 +6,38 @@
 //
 
 import UIKit
+import Combine
 
 class WeatherExtendedViewController: UIViewController {
     
+    var viewModel = WeatherViewModel()
+    var anyCancellable: [AnyCancellable] = []
     @IBOutlet weak var backgroundImage: UIImageView!
+    @IBOutlet weak var tableview: UITableView!
     var image: UIImage?
     var latLon: (String,String)?
+    var wm: WeetherResponse?
+    var list: [Day]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        suscripcions()
+        viewModel.getWeather5Days()
         backgroundImage.image = image
         effectImage()
+        tableview.dataSource = self
+        tableview.delegate = self
+    }
+    
+    func suscripcions(){
+        viewModel.$weatherExtended.sink {_ in } receiveValue: { wm in
+            self.wm = wm
+            if let valor =
+                wm?.list {
+                self.list = valor
+                self.tableview.reloadData()
+            }
+        }.store(in: &anyCancellable)
     }
     
     private func effectImage(){
@@ -25,5 +46,26 @@ class WeatherExtendedViewController: UIViewController {
         blurEffectView.frame = view.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         backgroundImage.addSubview(blurEffectView)
+    }
+}
+
+extension WeatherExtendedViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let valor = self.list?.count {
+            return valor
+        }
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        var cell = tableview.dequeueReusableCell(withIdentifier: "mycell")
+        
+        if cell == nil {
+            cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+        }
+ 
+        cell?.textLabel?.text = "A"
+        return cell!
     }
 }

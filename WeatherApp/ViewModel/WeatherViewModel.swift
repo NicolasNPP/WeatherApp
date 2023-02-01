@@ -19,6 +19,7 @@ class WeatherViewModel {
     @Published var description: String?
     @Published var backgroundImageWeather: UIImageView?
     @Published var minMax: (Double?,Double?)?
+    @Published var weatherExtended: WeetherResponse?
     //Creo subject para que se suscriban
  
     
@@ -45,7 +46,8 @@ class WeatherViewModel {
     
     func getWeather5Days(){
         WeatherService.shared.getWather5Days(latitude: "-38.00042", longitude: "-57.5562") { weather in
-           //print(weather)
+            //print(weather.list)
+            self.weatherExtended = weather
         } failure: { error in
             print(error)
             self.loading = false

@@ -34,7 +34,6 @@ class WeatherViewController: UIViewController {
         backgroundImage.image = UIImage(named: "defaultSunset")
         effectImage()
         //viewModel.getIcon(named: "01d")
-        viewModel.getWeather5Days()
     }
     
     func subscriptions(){
