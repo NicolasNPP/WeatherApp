@@ -9,7 +9,6 @@ import Foundation
 
 struct WeatherModel: Decodable {
     let name: String?
-    let temp: Float?
     let description: String?
     let icon: String?
     let weather: [Weather]?
@@ -26,3 +25,4 @@ struct Weather: Decodable {
 struct Main: Decodable {
     let temp: Double?
 }
+

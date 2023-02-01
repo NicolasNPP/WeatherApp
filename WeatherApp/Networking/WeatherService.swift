@@ -15,9 +15,6 @@ class WeatherService {
     public var weather: WeatherModel?
     private let API_KEY = "48d90bfb1a4fb9a610f65398727f70b9"
     private let UNITS = "&units=metric"
-    private func setUrl(lat: String, long: String) -> String {
-        return "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(long)&appid="
-    }
     
     func getWeather(latitude: String, longitude: String, success: @escaping (_ weather: WeatherModel) -> (), failure: @escaping (_ error: Error?) -> ()) {
         AF.request("\(setUrl(lat: latitude, long: longitude))\(API_KEY)\(UNITS)", method: .get).validate(statusCode: 200...299).responseDecodable (of: WeatherModel.self) { response in
@@ -30,9 +27,31 @@ class WeatherService {
         }
     }
     
+    //https://openweathermap.org/forecast5
+     
+    func getWather5Days(latitude: String, longitude: String, success: @escaping (_ weather: WeetherResponse) -> (), failure: @escaping (_ error: Error?) -> ()) {
+        
+        AF.request("\(setUrl5Day(lat: latitude, long: longitude))\(API_KEY)\(UNITS)", method: .get).validate(statusCode: 200...299).responseDecodable (of: WeetherResponse.self) { response in
+            
+            if let weather = response.value{
+                print(weather)
+                success(weather)
+            } else {
+                failure(response.error)
+            }
+        }
+    }
+            
+    private func setUrl(lat: String, long: String) -> String {
+        return "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(long)&appid="
+    }
+    
+    private func setUrl5Day(lat: String, long: String) -> String {
+        return  "https://api.openweathermap.org/data/2.5/forecast?lat=\(lat)&lon=\(long)&appid="
+    }
+    
     func getIcon() -> UIImageView{
         var theImg = UIImageView()
-       // theImg.image = UIImage(named: "defaultSunset")
         theImg.setImage(url: "https://openweathermap.org/img/wn/01d@4x.png")
         return theImg
     }

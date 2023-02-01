@@ -23,47 +23,48 @@
                                 </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="1" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aAE-be-saN">
-                                <rect key="frame" x="0.0" y="59" width="393" height="39"/>
+                                <rect key="frame" x="0.0" y="69" width="393" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="1" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SZV-pM-31p">
-                                <rect key="frame" x="0.0" y="302" width="393" height="112.33333333333331"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="1" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SZV-pM-31p">
+                                <rect key="frame" x="57" y="112" width="193" height="112"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
-                                <fontDescription key="fontDescription" type="system" pointSize="94"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="83"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="t6E-M5-C8v">
-                                <rect key="frame" x="186" y="138" width="20" height="37"/>
+                                <rect key="frame" x="186" y="148" width="20" height="37"/>
                                 <color key="color" systemColor="secondarySystemBackgroundColor"/>
                             </activityIndicatorView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B66-BH-zY1">
-                                <rect key="frame" x="102" y="114" width="188" height="188"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B66-BH-zY1">
+                                <rect key="frame" x="258" y="106" width="77" height="124"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="a8C-Sb-AOo">
+                                <rect key="frame" x="138" y="792" width="116" height="26"/>
+                            </pageControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="SZV-pM-31p" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="2YY-h0-ZSv"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="B66-BH-zY1" secondAttribute="trailing" constant="103" id="4ab-Pl-wiH"/>
                             <constraint firstItem="kBX-aX-dP8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="78T-Rp-ube"/>
                             <constraint firstItem="kBX-aX-dP8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7Wr-UJ-wG6"/>
                             <constraint firstItem="kBX-aX-dP8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="9K2-bd-pnt"/>
+                            <constraint firstItem="a8C-Sb-AOo" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="9QM-lZ-Teu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="t6E-M5-C8v" secondAttribute="trailing" constant="187" id="EU9-gR-t0B"/>
-                            <constraint firstItem="aAE-be-saN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="G12-WU-0Y1"/>
-                            <constraint firstItem="SZV-pM-31p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JqJ-Sv-8UR"/>
+                            <constraint firstItem="aAE-be-saN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="G12-WU-0Y1"/>
                             <constraint firstItem="aAE-be-saN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ZJ5-lr-6L2"/>
-                            <constraint firstItem="B66-BH-zY1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="102" id="b2I-44-MRr"/>
                             <constraint firstItem="t6E-M5-C8v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="186" id="bG1-0p-xig"/>
-                            <constraint firstItem="SZV-pM-31p" firstAttribute="top" secondItem="B66-BH-zY1" secondAttribute="bottom" id="eHP-d4-dFw"/>
+                            <constraint firstItem="a8C-Sb-AOo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="138" id="dM4-yy-phq"/>
                             <constraint firstAttribute="bottom" secondItem="kBX-aX-dP8" secondAttribute="bottom" id="efU-kF-04y"/>
-                            <constraint firstItem="B66-BH-zY1" firstAttribute="top" secondItem="aAE-be-saN" secondAttribute="bottom" constant="16" id="hdl-H7-5ZP"/>
                             <constraint firstItem="t6E-M5-C8v" firstAttribute="top" secondItem="aAE-be-saN" secondAttribute="bottom" constant="40" id="i0C-c8-Bhc"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SZV-pM-31p" secondAttribute="bottom" constant="403.66666666666669" id="jjy-B9-Lu3"/>
                             <constraint firstItem="aAE-be-saN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oKZ-aW-Ej8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a8C-Sb-AOo" secondAttribute="trailing" constant="139" id="ww9-kx-Tjc"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Kg1-cR-GPY" appends="YES" id="seH-el-JdA"/>

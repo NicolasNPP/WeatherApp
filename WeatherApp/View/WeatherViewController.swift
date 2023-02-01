@@ -15,15 +15,12 @@ class WeatherViewController: UIViewController {
     var anyCancellable: [AnyCancellable] = []
     var locations: [(String,String)] = [("-34.61315","-58.37723"),("-38.00042","-57.5562")]
     
-    
     @IBOutlet weak var myLabel: UILabel!
     @IBOutlet weak var labelTemp: UILabel!
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var imwea: UIImageView!
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.labelTemp.text = ""
@@ -33,6 +30,7 @@ class WeatherViewController: UIViewController {
         backgroundImage.image = UIImage(named: "defaultSunset")
         effectImage()
         viewModel.getIcon(name: "a")
+        viewModel.getWeather5Days()
     }
     
     func subscriptions(){

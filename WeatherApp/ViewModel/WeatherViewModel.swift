@@ -27,18 +27,21 @@ class WeatherViewModel {
             self.getIcon(name: "01d")
         } failure: { error in
             print(error)
+            self.loading = false
         }
-
+    }
+    
+    func getWeather5Days(){
+        WeatherService.shared.getWather5Days(latitude: "-38.00042", longitude: "-57.5562") { weather in
+           print(weather)
+        } failure: { error in
+            print(error)
+            self.loading = false
+        }
     }
     
     func getIcon(name: String){
-        
-        DispatchQueue.main.async {
             var im = WeatherService.shared.getIcon()
-            
             self.imageWeather = im
-        }
-        
-
     }
 }
