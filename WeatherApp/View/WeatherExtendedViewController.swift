@@ -11,6 +11,7 @@ class WeatherExtendedViewController: UIViewController {
     
     @IBOutlet weak var backgroundImage: UIImageView!
     var image: UIImage?
+    var latLon: (String,String)?
     
     override func viewDidLoad() {
         super.viewDidLoad()

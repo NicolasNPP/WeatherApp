@@ -81,7 +81,7 @@ class WeatherViewController: UIViewController {
             if let valor = state {
                 var formated = String(format: "%.0f", valor.0!)
                 var formated2 = String(format: "%.0f", valor.1!)
-                self.minMaxLabel.text? = "Min: \(formated)ºC - Max: \(formated2)ºC"
+                self.minMaxLabel.text? = "Min: \(formated)ºC / Max: \(formated2)ºC"
                 print(valor.0)
                 print(valor.1)
                 
@@ -151,8 +151,8 @@ class WeatherViewController: UIViewController {
         if segue.identifier == "detailSegue" {
             
             if let destino = segue.destination as? WeatherExtendedViewController {
-                
                 destino.image = self.backgroundImage.image
+                destino.latLon = locations[numTemp]
             }
             
         }
