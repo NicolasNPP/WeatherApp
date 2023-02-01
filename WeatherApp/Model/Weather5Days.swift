@@ -19,6 +19,8 @@ struct City: Decodable {
 
 struct MainDay: Decodable {
     let temp: Double?
+    let temp_min: Double?
+    let temp_max: Double?
 }
 
 struct WeatherDay: Decodable {

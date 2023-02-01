@@ -27,6 +27,8 @@ class WeatherExtendedViewController: UIViewController {
         effectImage()
         tableview.dataSource = self
         tableview.delegate = self
+        tableview.backgroundColor = .clear
+        tableview.register(UINib(nibName: "WeatherExtendedTableViewCell", bundle: nil), forCellReuseIdentifier: "mycustomcell")
     }
     
     func suscripcions(){
@@ -47,7 +49,15 @@ class WeatherExtendedViewController: UIViewController {
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         backgroundImage.addSubview(blurEffectView)
     }
+    
+    func formatted(valor: Double) -> String {
+        var formated = String(format: "%.0f", valor)
+        return formated
+    }
+    
 }
+
+
 
 extension WeatherExtendedViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -59,13 +69,21 @@ extension WeatherExtendedViewController: UITableViewDataSource, UITableViewDeleg
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var cell = tableview.dequeueReusableCell(withIdentifier: "mycell")
+        var cell =  tableview.dequeueReusableCell(withIdentifier: "mycustomcell", for: indexPath) as? WeatherExtendedTableViewCell
         
-        if cell == nil {
-            cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+        if let valor = self.list?[indexPath.row].main?.temp?.rounded((.towardZero)) {
+            var temp = self.list?[indexPath.row].main?.temp?.description
+            
+            var min = self.list?[indexPath.row].main?.temp_min
+            
+            var max = self.list?[indexPath.row].main?.temp_max
+            
+            var formated = String(format: "%.0f", valor)
+            cell?.temp.text = "\(formated)ºC"
+            cell?.minMax.text = "\(formatted(valor: min!))ºC / \(formatted(valor: max!))ºC"
+                cell?.layoutIfNeeded()
+                return cell!
         }
- 
-        cell?.textLabel?.text = "A"
         return cell!
     }
 }
