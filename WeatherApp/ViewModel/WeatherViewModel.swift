@@ -23,8 +23,6 @@ class WeatherViewModel {
     @Published var imgWeatherDay: WeetherResponse?
     
     //Creo subject para que se suscriban
- 
-    
     var service = WeatherService.shared
     func getWeather(latitude: String, longitude: String){
         
@@ -35,8 +33,8 @@ class WeatherViewModel {
             
             self.icon = weather.weather?[0].icon
             
+            //Tomamos la descripcion para luego llamar tambien al icono del clima
             self.description = weather.weather?[0].description
-           
             
             self.minMax = (weather.main?.temp_min,weather.main?.temp_max)
             
@@ -60,6 +58,4 @@ class WeatherViewModel {
         let im = WeatherService.shared.getIcon(name: named)
             self.imageWeather = im
     }
-    
-    
 }

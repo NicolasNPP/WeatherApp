@@ -24,6 +24,7 @@ class WeatherService {
             } else {
                 failure(response.error)
             }
+
         }
     }
      
@@ -32,7 +33,6 @@ class WeatherService {
         AF.request("\(setUrl(lat: latitude, long: longitude, api: "forecast"))\(API_KEY)\(UNITS)", method: .get).validate(statusCode: 200...299).responseDecodable (of: WeetherResponse.self) { response in
             
             if let weather = response.value{
-                //print(weather)
                 success(weather)
             } else {
                 failure(response.error)
@@ -43,8 +43,6 @@ class WeatherService {
     private func setUrl(lat: String, long: String, api: String) -> String {
         return "https://api.openweathermap.org/data/2.5/\(api)?lat=\(lat)&lon=\(long)&appid="
     }
-    
-    
     
     func getIcon(name: String) -> UIImageView{
         var theImg = UIImageView()

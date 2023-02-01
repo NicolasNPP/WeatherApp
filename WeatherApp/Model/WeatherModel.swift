@@ -27,4 +27,3 @@ struct Main: Decodable {
     let temp_min: Double?
     let temp_max: Double?
 }
-

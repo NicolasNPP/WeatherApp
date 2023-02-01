@@ -23,9 +23,9 @@
                                     <outletCollection property="gestureRecognizers" destination="tSL-LT-Yg7" appends="YES" id="vP2-iz-oxq"/>
                                 </connections>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="1" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aAE-be-saN">
-                                <rect key="frame" x="0.0" y="69" width="393" height="39"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aAE-be-saN">
+                                <rect key="frame" x="10" y="69" width="373" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -38,7 +38,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="t6E-M5-C8v">
-                                <rect key="frame" x="186" y="148" width="20" height="37"/>
+                                <rect key="frame" x="186" y="145" width="20" height="37"/>
                                 <color key="color" systemColor="secondarySystemBackgroundColor"/>
                             </activityIndicatorView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B66-BH-zY1">
@@ -86,12 +86,12 @@
                             <constraint firstItem="a8C-Sb-AOo" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="9QM-lZ-Teu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="t6E-M5-C8v" secondAttribute="trailing" constant="187" id="EU9-gR-t0B"/>
                             <constraint firstItem="aAE-be-saN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="G12-WU-0Y1"/>
-                            <constraint firstItem="aAE-be-saN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ZJ5-lr-6L2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aAE-be-saN" secondAttribute="trailing" constant="10" id="PWs-nb-Xaz"/>
                             <constraint firstItem="t6E-M5-C8v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="186" id="bG1-0p-xig"/>
                             <constraint firstItem="a8C-Sb-AOo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dM4-yy-phq"/>
                             <constraint firstAttribute="bottom" secondItem="kBX-aX-dP8" secondAttribute="bottom" id="efU-kF-04y"/>
                             <constraint firstItem="t6E-M5-C8v" firstAttribute="top" secondItem="aAE-be-saN" secondAttribute="bottom" constant="40" id="i0C-c8-Bhc"/>
-                            <constraint firstItem="aAE-be-saN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oKZ-aW-Ej8"/>
+                            <constraint firstItem="aAE-be-saN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="o9y-fW-D2l"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a8C-Sb-AOo" secondAttribute="trailing" id="ww9-kx-Tjc"/>
                         </constraints>
                         <connections>

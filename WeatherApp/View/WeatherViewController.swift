@@ -12,11 +12,11 @@ class WeatherViewController: UIViewController {
 
     var viewModel = WeatherViewModel()
     var wm: WeatherModel?
-    @IBOutlet weak var pageControl: UIPageControl!
     var anyCancellable: [AnyCancellable] = []
-    var locations: [(String,String)] = [("41.38879","41.38879"),("-34.61315","-58.37723"),("-38.00042","-57.5562") ,("-54.554047","-67.225258")]
+    var locations: [(String,String)] = [("23.634501","-102.552784"),("-34.61315","-58.37723"),("-38.00042","-57.5562") ,("-54.554047","-67.225258")]
     var numTemp = 0
     
+    @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var myLabel: UILabel!
     @IBOutlet weak var labelTemp: UILabel!
     @IBOutlet weak var backgroundImage: UIImageView!
@@ -28,7 +28,6 @@ class WeatherViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(locations.count)
         self.labelTemp.text = ""
         activityIndicator.startAnimating()
         subscriptions()
@@ -71,9 +70,8 @@ class WeatherViewController: UIViewController {
         
         viewModel.$description.sink { state in
             if let valor = state {
-                print(state)
                 self.backgroundImage.image = UIImage(named: "\(state!)")
-                self.descriptionLabel.text = state
+                self.descriptionLabel.text = state?.capitalizingFirstLetter()
                 self.descriptionLabel.isHidden = false
                 
             }
@@ -84,9 +82,6 @@ class WeatherViewController: UIViewController {
                 var formated = String(format: "%.0f", valor.0!)
                 var formated2 = String(format: "%.0f", valor.1!)
                 self.minMaxLabel.text? = "Min: \(formated)ºC / Max: \(formated2)ºC"
-                print(valor.0)
-                print(valor.1)
-                
                 self.minMaxLabel.isHidden = false
             }
         }.store(in: &anyCancellable)
@@ -97,7 +92,6 @@ class WeatherViewController: UIViewController {
             activityIndicator.startAnimating()
         } else {activityIndicator.stopAnimating()}
     }
- 
     
     private func effectImage(){
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
@@ -135,16 +129,13 @@ class WeatherViewController: UIViewController {
         pageControl.currentPage = self.numTemp
     }
     
-    
     @IBAction func SwipeAction(_ sender: Any) {
         nextLocation()
     }
     
-    
     @IBAction func SwipeLeftAction(_ sender: Any) {
         backLocation()
     }
-    
  
     @IBAction func nextScreen(_ sender: Any) {
         performSegue(withIdentifier: "detailSegue", sender: self)
@@ -153,15 +144,20 @@ class WeatherViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "detailSegue" {
-            
             if let destino = segue.destination as? WeatherExtendedViewController {
                 destino.image = self.backgroundImage.image
                 destino.latLon = locations[numTemp]
             }
-            
         }
-        
     }
-    
-    
+}
+
+extension String {
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).capitalized + dropFirst()
+    }
+
+    mutating func capitalizeFirstLetter() {
+        self = self.capitalizingFirstLetter()
+    }
 }
